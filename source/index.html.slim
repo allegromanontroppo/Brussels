@@ -1,0 +1,17 @@
+---
+title: Brussels - February 2014
+---
+
+.container ng-app="brusselsApp"
+  div ng-controller="brusselsCtrl"
+    .row masonry="" lightbox=""
+      .col-xs-6.col-sm-6.col-md-4.col-lg-3.masonry-tile ng-repeat="photo in photos" 
+        a.thumbnail href="{{ photo.media$group.media$content[0].url }}" title="{{ photo.summary.$t }}"
+          img ng-src="{{ photo.media$group.media$thumbnail[0].url }}" 
+          
+- content_for :javascripts do
+
+
+  == javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.2/zepto.min.js"
+  == javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/0.8.9/jquery.magnific-popup.min.js"
+  = javascript_include_tag 'brussels'
